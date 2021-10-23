@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @book = Book.all
     book = Book.new
@@ -12,7 +14,7 @@ class BooksController < ApplicationController
     else
       render :index
     end
-    
+
   end
 
   def show
