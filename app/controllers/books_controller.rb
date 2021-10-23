@@ -11,6 +11,8 @@ class BooksController < ApplicationController
       redirect_to books_path(@book.id)
     else
       render :index
+    end
+    
   end
 
   def show
