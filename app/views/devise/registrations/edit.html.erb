@@ -7,6 +7,10 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  
+  <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "60x60" %>
+  <label for="inputImage">Image</label>
+  <%= f.attachment_field :profile_image, placeholder: "Image" %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

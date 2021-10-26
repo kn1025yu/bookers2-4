@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :books, only: [:new, :create, :index, :show, :destroy, :edit]
   post '/books/new', to: 'books#create', as: :create
-
+  
 end

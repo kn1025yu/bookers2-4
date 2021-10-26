@@ -41,34 +41,26 @@
 </form>
 </div>
 
-<div class="contents">
-  <h2>Books</h2>
+<div class="col-md-9">
+  <h2>Users</h2>
   <table>
    <thead>
     <tr>
-      <th>Title</th>
-      <th>Opinion</th>
+      <th>image</th>
+      <th>name</th>
     </tr>
    </thead>
-      <% @books.each do |book| %>
+    <tbody>
+      <% @users.each do |user| %>
         <tr>
           <td>
-            <%= book.user.name %>
-          </td>
-          <td><%= link_to book.title, book_path(book.id) %></td>
-          <td><%= book.body %></td>
-          <td></td>
+          <%= image_tag('sample-author1.jpg') %></td>
+          <td><%= book.user_name %></td>
           <td>
-           <%= link_to "edit", book_path(book), class: 'btn btn-success btn-sm btn-block mb-3 destroy' %>
-          </td>
-          <td></td>
-          <td>
-            <%= link_to "destroy", book_path(book), method: :delete, class: 'btn btn-danger btn-sm btn-block mb-3 destroy', "data-confirm" => "Are you sure?" %>
+           <%= link_to "show", book_path(book) %>
           </td>
         </tr>
       <% end %>
-      <%= paginate @post_images %>
-    <tbody>
     </tbody>
   </table>
 </div>

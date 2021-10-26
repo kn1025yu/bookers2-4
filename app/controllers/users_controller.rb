@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.find(params[:id])
+    @user = User.all
+    @books = @user.books.page(params[:page]).reverse_order
   end
 
   def show
