@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @books = Book.find(params[:id])
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
 
   private
 

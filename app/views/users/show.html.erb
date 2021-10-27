@@ -1,6 +1,3 @@
-<%= flash[:notice] %>
-<%= flash[:alert] %>
-
 <div class="col-md-3">
   <h2>User info</h2>
   <% if @user .present? %>
@@ -59,6 +56,7 @@
           <td>
            <%= link_to "show", book_path(book) %>
           </td>
+          
         </tr>
       <% end %>
     </tbody>
