@@ -1,10 +1,6 @@
 <div class="col-md-3">
   <h2>User info</h2>
-  <% if @user .present? %>
-    <%= image_tag @user.image.url %>
-  <% else %>
-    <%= image_tag 'no_image.jpg'%>
-  <% end %>
+  <%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg", format: 'jpeg', size: "60x60" %>
 <table class="row">
 <tbody>
   <tr></tr>

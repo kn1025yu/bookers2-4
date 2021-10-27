@@ -16,6 +16,5 @@
 <br>
 
 <%= link_to "show", book_path %>
-｜
-<a class="back" href="/books">Back</a>
+<%= link_to "Back", book_path(@book.id)%>
 <% end %>
