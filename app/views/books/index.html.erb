@@ -13,14 +13,6 @@
         <tr>
           <td><%= link_to book.title, book_path(book.id) %></td>
           <td><%= book.body %></td>
-          <% if @book.user == current_user %>
-           <td>
-            <%= link_to "edit", edit_book_path(book), class: 'btn btn-success btn-sm btn-block mb-3 destroy' %>
-           </td>
-           <td>
-            <%= link_to "destroy", book_path(book), method: :delete, class: 'btn btn-danger btn-sm btn-block mb-3 destroy', "data-confirm" => "Are you sure?" %>
-           </td>
-          <% end %>
         </tr>
       <% end %>
     </tbody>
