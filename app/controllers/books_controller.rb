@@ -18,7 +18,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id), notice:'successfully'
     else
-      render :index
+      render :show
       flash.now[:alert] = 'unsuccessfully'
     end
   end

@@ -1,37 +1,4 @@
- <div class="col-md-3">
-  <h2>User info</h2>
-<table class="row">
-<tbody>
-  <tr></tr>
-  <tr>
-	  <th>name</th>
-	  <th></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th></th>
-  </tr>
-</tbody>
-</table>
-  <div>
-    <a class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user" href="/users/edit"></a>
-  </div>
-
-  <h2 class="mt-3">New book</h2>
-  <%= form_with model:@book, local:true do |f| %>
-
-  <h4>title</h4>
-  <%= f.text_field :title %>
-
-  <h4>opinion</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit '投稿' %>
-
-<% end %>
-
-
-</div>
+<%= render 'books/list', books: @books %>
 
 <div class="col-md-9">
   <h2>Book detail</h2>
