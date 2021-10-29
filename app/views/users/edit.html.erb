@@ -1,4 +1,11 @@
 <h2>Edit</h2>
+ <% if @user.errors.any? %>
+    <%= @user.errors.count %>errors have occurred
+    <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+    <% end %>
+  <% end %>
+
 
 <%= form_with model:@user, local:true do |f| %>
 
@@ -17,7 +24,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update User" %>
   </div>
 
 <% end %>

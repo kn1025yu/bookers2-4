@@ -1,12 +1,17 @@
+<div class="container px-5 px-sm-0">
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+  <div class="row">
 <%= render 'books/list', book: @book, user: current_user %>
 
-<div class="col-md-9">
+<div class="col-md-8 offset-md-1">
   <h2>Books</h2>
   <table>
    <thead>
     <tr>
-      <th>Title</th>
-      <th>Opinion</th>
+      <th></th>
+      <th>Book</th>
+      <th>detail</th>
     </tr>
    </thead>
     <tbody>
@@ -21,4 +26,6 @@
       <% end %>
     </tbody>
   </table>
+</div>
+</div>
 </div>
