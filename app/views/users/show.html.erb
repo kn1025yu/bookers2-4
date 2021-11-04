@@ -24,6 +24,18 @@
               </td>
               <td><%= link_to book.title, book_path(book.id) %></td>
               <td><%= book.body %></td>
+              <div>
+                <p>コメント件数：<%= @user.book_comments.count %></p>
+                <% @user.book_comments.each do |book_comment| %>
+                <%= book_comment.user.name %>
+                <% end %>
+              </div>
+              <div>
+              <%= form_with(model:[@user, @book_comment], local: true) do |f| %>
+                <%= f.text_area :comment, rows:'5' %>
+                <%= f.submit "送信" %>
+              <% end %>
+            </div>
             </tr>
           <% end %>
         </tbody>
