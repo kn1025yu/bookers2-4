@@ -6,7 +6,12 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   has_many :book_comments, dependent: :destroy
-  
+  has_many :favorites, dependent: :destroy
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+
   attachment :profile_image
   validates :password, presence: true, on: :create
   validates :name, uniqueness: true,
