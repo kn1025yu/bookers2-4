@@ -49,12 +49,14 @@
       		      <%= book_comment_user.name %>
     		      <% end %>
     	      </td>
-    	      <td><%= book_comment.comment %></td>
+    	      <td><%= @book_comment.comment %></td>
     	      <% if current_user == book_comment_user %>
       	    <td><%= link_to 'Destroy', book_book_comment_path(book_comment.book_id, book_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
     	      <% end %>
           </tr>
         <% end %>
+      </table>
+      <table>
         <%= form_with model:[@book,@book_comment], local:true do |f| %>
           <%= f.text_area :comment, size:"90x5" %><br>
           <%= f.submit '送信'%>
