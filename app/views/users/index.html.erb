@@ -8,7 +8,6 @@
       <table class="table-hover table-inverse">
         <thead>
           <tr>
-            <th></th>
             <th>image</th>
             <th>name</th>
           </tr>
@@ -21,6 +20,7 @@
                 <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", format: 'jpeg', size: "60x60" %>
               </td>
               <td><%= user.name %></td>
+              <td><%= render 'relationships/follow_button', user: user %></td>
               <td><%= link_to "Show", user_path(user.id) %></td>
             </tr>
           <% end %>
