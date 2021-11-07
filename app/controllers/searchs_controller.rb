@@ -11,7 +11,7 @@ class SearchsController < ApplicationController
   def search_for(model, content, method)
     if model == 'user'
       if method == 'perfect'
-        User.where(name: content)
+       @user = User.where(name: content)
       else
         User.where('name LIKE ?', '%'+content+'%')
       end
