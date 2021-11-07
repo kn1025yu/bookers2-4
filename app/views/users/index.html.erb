@@ -20,7 +20,11 @@
                 <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", format: 'jpeg', size: "60x60" %>
               </td>
               <td><%= user.name %></td>
-              <td><%= render 'relationships/follow_button', user: user %></td>
+              <td>
+                <% unless current_user == user %>
+                  <%= render 'relationships/follow_button', user: user %>
+                <% end %>
+              </td>
               <td><%= link_to "Show", user_path(user.id) %></td>
             </tr>
           <% end %>
