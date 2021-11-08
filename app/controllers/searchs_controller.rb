@@ -12,14 +12,18 @@ class SearchsController < ApplicationController
     if model == 'user'
       if method == 'perfect'
        @user = User.where(name: content)
-      else
-        User.where('name LIKE ?', '%'+content+'%')
+      elsif method == 'partial'
+        User.where('name LIKE ?', "%#{content}%")
+      elsif method == 'pre'
+        User.where('name LIKE ?', "#{content}%")
+      elsif method == 'back'
+        User.where('name LIKE ?', "%#{content}")
       end
     elsif model == 'book'
       if method == 'perfect'
         Book.where(title: content)
       else
-        Book.where('title LIKE ?', '%'+content+'%')
+        Book.where('title LIKE ?', "%#{content}%")
       end
     end
   end
