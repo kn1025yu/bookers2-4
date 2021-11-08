@@ -22,8 +22,12 @@ class SearchsController < ApplicationController
     elsif model == 'book'
       if method == 'perfect'
         Book.where(title: content)
-      else
+      elsif method == 'partial'
         Book.where('title LIKE ?', "%#{content}%")
+      elsif method == 'pre'
+        Book.where('title LIKE ?', "#{content}%")
+      elsif method == 'back'
+        Book.where('title LIKE ?', "%#{content}")
       end
     end
   end
