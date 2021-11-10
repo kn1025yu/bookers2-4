@@ -36,7 +36,7 @@
                 <%= link_to 'Destroy', book_path(@book.id), class: 'btn btn-danger btn-sm btn-block mb-3', method: :delete %>
               </td>
             <% end %>
-            <td class="favorite-btn">
+            <td id="favorite-btn">
               <%= render "favorites/favorites", book: @book %>
             </td>
             <td>コメント数: <%= @book.book_comments.count %></td>
