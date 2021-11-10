@@ -36,24 +36,19 @@
                 <%= link_to 'Destroy', book_path(@book.id), class: 'btn btn-danger btn-sm btn-block mb-3', method: :delete %>
               </td>
             <% end %>
-            <td id="favorite-btn_<%= book.id %>">
+            <td class="favorite-btn">
               <%= render "favorites/favorites", book: @book %>
             </td>
             <td>コメント数: <%= @book.book_comments.count %></td>
           </tr>
         </tbody>
-
-        <tbody id="book">
-          <%= render 'books/comment', book: @book %>
-        </tbody>
-
       </table>
-      <table>
-        <%= form_with model:[@book, @book_comment], remote:true do |f| %>
-          <%= f.text_area :comment, size:"90x5" %><br>
-          <%= f.submit '送信'%>
-        <% end %>
-      </table>
+        <div id="comment_table">
+          <%= render 'books/comment', book_comments: @book.book_comments %>
+        </div>
+      <div class="book">
+        <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
+      </div>
     </div>
   </div>
 </div>
