@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(version: 2021_11_06_120833) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_comments", force: :cascade do |t|
-    t.text "comment"
-    t.integer "user_id"
-    t.integer "post_book_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "relationships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "follow_id"
@@ -63,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_11_06_120833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image_id"
+    t.text "profile"
     t.text "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
